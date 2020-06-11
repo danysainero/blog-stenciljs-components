@@ -45,3 +45,31 @@
 .card__footer {
   color: whitesmoke;
 }
+
+@media  (max-width: 1000px) {
+  .card {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card__body {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .card__body__text {
+    width: 100%;
+    align-items: center;
+    font-size: 1rem;
+    padding: 10px;
+    line-height: 1;
+  }
+
+  .card__body__title {
+    
+    font-size: 1.8rem;
+    margin-right: 0;
+    text-align: center;
+    width: 100%;
+  }
+}

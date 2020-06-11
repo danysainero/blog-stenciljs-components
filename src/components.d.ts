@@ -25,7 +25,7 @@ export namespace Components {
         "middle": string;
     }
     interface PostDetail {
-        "post": Object;
+        "post": any;
     }
     interface PostDetailComments {
         "commentDate": string;
@@ -91,7 +91,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface PostDetail {
-        "post"?: Object;
+        "post"?: any;
     }
     interface PostDetailComments {
         "commentDate"?: string;
