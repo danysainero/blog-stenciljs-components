@@ -24,12 +24,22 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface PostComments {
+        "author": string;
+        "creacion": string;
+        "texto": string;
+    }
     interface PostDetail {
-        "post": any;
+        "post": Object;
     }
     interface PostDetailComments {
         "commentDate": string;
         "comments": Object[];
+    }
+    interface PostList {
+        "author": string;
+        "post": string;
+        "titulo": string;
     }
 }
 declare global {
@@ -51,6 +61,12 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLPostCommentsElement extends Components.PostComments, HTMLStencilElement {
+    }
+    var HTMLPostCommentsElement: {
+        prototype: HTMLPostCommentsElement;
+        new (): HTMLPostCommentsElement;
+    };
     interface HTMLPostDetailElement extends Components.PostDetail, HTMLStencilElement {
     }
     var HTMLPostDetailElement: {
@@ -63,12 +79,20 @@ declare global {
         prototype: HTMLPostDetailCommentsElement;
         new (): HTMLPostDetailCommentsElement;
     };
+    interface HTMLPostListElement extends Components.PostList, HTMLStencilElement {
+    }
+    var HTMLPostListElement: {
+        prototype: HTMLPostListElement;
+        new (): HTMLPostListElement;
+    };
     interface HTMLElementTagNameMap {
         "grid-layout": HTMLGridLayoutElement;
         "home-layout": HTMLHomeLayoutElement;
         "my-component": HTMLMyComponentElement;
+        "post-comments": HTMLPostCommentsElement;
         "post-detail": HTMLPostDetailElement;
         "post-detail-comments": HTMLPostDetailCommentsElement;
+        "post-list": HTMLPostListElement;
     }
 }
 declare namespace LocalJSX {
@@ -90,19 +114,31 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface PostComments {
+        "author"?: string;
+        "creacion"?: string;
+        "texto"?: string;
+    }
     interface PostDetail {
-        "post"?: any;
+        "post"?: Object;
     }
     interface PostDetailComments {
         "commentDate"?: string;
         "comments"?: Object[];
     }
+    interface PostList {
+        "author"?: string;
+        "post"?: string;
+        "titulo"?: string;
+    }
     interface IntrinsicElements {
         "grid-layout": GridLayout;
         "home-layout": HomeLayout;
         "my-component": MyComponent;
+        "post-comments": PostComments;
         "post-detail": PostDetail;
         "post-detail-comments": PostDetailComments;
+        "post-list": PostList;
     }
 }
 export { LocalJSX as JSX };
@@ -112,8 +148,10 @@ declare module "@stencil/core" {
             "grid-layout": LocalJSX.GridLayout & JSXBase.HTMLAttributes<HTMLGridLayoutElement>;
             "home-layout": LocalJSX.HomeLayout & JSXBase.HTMLAttributes<HTMLHomeLayoutElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "post-comments": LocalJSX.PostComments & JSXBase.HTMLAttributes<HTMLPostCommentsElement>;
             "post-detail": LocalJSX.PostDetail & JSXBase.HTMLAttributes<HTMLPostDetailElement>;
             "post-detail-comments": LocalJSX.PostDetailComments & JSXBase.HTMLAttributes<HTMLPostDetailCommentsElement>;
+            "post-list": LocalJSX.PostList & JSXBase.HTMLAttributes<HTMLPostListElement>;
         }
     }
 }
