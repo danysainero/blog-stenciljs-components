@@ -6,18 +6,15 @@ import { Component, h, Prop } from "@stencil/core";
   shadow: true,
 })
 export class PostList {
-
   @Prop() titulo: string;
   @Prop() author: string;
   @Prop() post: string;
 
   render() {
     return (
-        <div class="card">
+      <div class="card">
         <div class="card__header">
-          <p class="card__header__info">
-            Autor: {this.author}
-          </p>
+          <p class="card__header__info">Autor/a: {this.author}</p>
         </div>
         <div class="card__body">
           <p class="card__body__title">{this.titulo}</p>

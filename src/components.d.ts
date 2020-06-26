@@ -30,7 +30,9 @@ export namespace Components {
         "texto": string;
     }
     interface PostDetail {
-        "post": Object;
+        "postAuthorName": string;
+        "postContent": string;
+        "postTitle": string;
     }
     interface PostDetailComments {
         "commentDate": string;
@@ -120,7 +122,9 @@ declare namespace LocalJSX {
         "texto"?: string;
     }
     interface PostDetail {
-        "post"?: Object;
+        "postAuthorName"?: string;
+        "postContent"?: string;
+        "postTitle"?: string;
     }
     interface PostDetailComments {
         "commentDate"?: string;
